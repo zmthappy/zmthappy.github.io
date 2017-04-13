@@ -1,0 +1,35 @@
+header,footer{
+	width:1000px;
+	margin: 10px auto;
+	border: 1px solid #FF0000;
+	height: 200px;
+}
+.f{
+	width:1000px;
+	margin: auto;
+}
+section{
+	min-height: 500px;
+}
+aside{
+	border: 1px solid #FF0000;
+	width: 200px;
+	min-height: 500px;
+	float: left;
+}
+aside:nth-child(2){
+	float:right;
+}
+main{
+	border: 1px solid #FF0000;
+    margin: 0px 260px;
+    min-height: 500px;
+}
+h1{
+	margin: 30px;
+}
+li{
+	display: inline;
+	margin: 80px 20px;
+	float: right;
+}
