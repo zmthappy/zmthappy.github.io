@@ -1,0 +1,43 @@
+body{
+	background-color: deepskyblue;
+}
+.post{
+	width: 400px;
+	height: 200px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top:0;
+	text-align: center;
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,.5);
+}
+.post h3{
+	text-align: center;	
+	margin: 20px 0px;
+}
+.post input{
+	margin: 10px 0px;
+	border: none;
+	outline: none;
+	border: 1px dashed lightblue;
+    transition: all.5s;
+}
+.post input:hover{
+	border: 1px solid lightblue;
+	box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,.5);
+}
+.post input[type="submit"]{
+	width: 20%;	
+	height: 30px;
+	/*position: absolute;*/
+	line-height: 30px;
+	left:10px;
+	right:10px;
+	bottom: -40px;
+	cursor: pointer;
+}
+.post input[type="submit"]:hover{
+	letter-spacing: 5px;
+	background-color: blue;
+}
