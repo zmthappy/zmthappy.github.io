@@ -1,0 +1,71 @@
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+p{
+	color: #fff;
+}
+h2{
+	color: #fff;
+}
+body{
+	background: url(../img/pexels-photo-248797.jpeg) center top fixed;
+	min-height: 1200px;
+}
+header{
+	max-width: 1200px;
+	height: auto;
+	margin: 20px 30px;
+	position: relative;
+}
+ img{
+	width: 80px;
+	height: auto;
+}
+.xx{
+	width: 1200px;
+	margin: auto;
+}
+.zz ul{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.zz ul li{
+	float: left;
+	margin: 20px 20px;
+}
+.zz ul li  a{
+	border: 1px solid transparent;
+	transition: color .5s,border .5s;
+	padding: 20px;
+	color: black;
+}
+.zz ul li:hover a{
+	border: 1px solid  #fff ;
+    color: #FFFFFF;
+}
+p a{
+	border-bottom: 1px dashed #FFFFFF;
+	padding-bottom: 4px;
+	transition: border .5s; 
+}
+p a:hover{
+	border-bottom: 2px solid #FFFFFF;
+}
+.mylove ul li{
+	float: left;
+	margin: 20px 30px;
+	border: 1px solid chocolate;
+	width: 100px;
+	height: 50px;
+	background-color: cyan;
+}
