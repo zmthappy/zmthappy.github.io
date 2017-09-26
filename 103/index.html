@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/a.css"/>
+	</head>
+	<body>
+		<div class="a" >
+			<h2>猜数字</h2>
+			<input type="number" min="1" max="10" name="text" id="text" placeholder="输入1——10之间的数字" />
+			<input class="clearfix" type="button" name="button1" id="button1" style="display:block" value="开始" />
+			<input class="clearfix" type="button" name="button2" id="button2" style="display:none" value="重来" />
+			<div id="b">
+				剩余次数：6
+			</div>
+			<div id="c">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var n=Math.floor(Math.random()*10+1);
+			var text=document.getElementById('text');
+			var B1=document.getElementById("button1");
+			var B2=document.getElementById("button2");
+			var div1=document.getElementById("b");
+			var div2=document.getElementById("c");
+			var chu=6;
+			B1.addEventListener("click",fang);
+			function fang() {
+				zxc=text.value;
+				chu--;
+				console.log(chu);
+				if (zxc>n&&chu>=0) {
+					div1.innerHTML="剩余次数："+chu;
+					div2.innerHTML+="这次猜的"+zxc+"有点大<br>";
+				} 
+				else if(zxc<n&&chu>=0){
+					div1.innerHTML="剩余次数："+chu;
+					div2.innerHTML+="这次猜的"+zxc+"有点小<br>";
+				}
+				else if(zxc==n&&chu>=0){
+					div2.innerHTML+="猜对了<br>";
+					B2.style.display="block";
+					B1.style.display="none";
+				}	
+				else if(!(zxc>='0'&&zxc<='9')){
+					div2.innerHTML+="请输入数字<br>";
+					chu++;
+				}
+				else if(chu==-1){
+					div2.innerHTML+="次数以用尽，游戏结束，你输了.";
+					text.disabled=true;
+					B2.style.display="block";
+					B1.style.display="none";
+				}
+			}
+			B2.addEventListener("click",fang2);
+			function fang2 () {
+				chu=6;
+				text.value="";
+				div1.innerHTML="剩余次数："+chu;
+				div2.innerHTML="";
+				n=Math.floor(Math.random()*10+1);
+				text.disabled=false;
+				B2.style.display="none";
+				B1.style.display="block";
+			}
+		</script>
+	</body>
+</html>

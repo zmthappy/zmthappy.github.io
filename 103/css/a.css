@@ -1,0 +1,33 @@
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.a{
+	width: 250px;
+	min-height: 240px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+#text{
+	width: 160px;
+	border-radius: 10px 0px 0px 10px;
+	float: left;
+}
+#button1{
+	float: left;
+	border-radius: 0px 10px 10px 0px;
+}
+#button2{
+	float: left;
+	border-radius: 0px 10px 10px 0px;
+}
+#b{
+	width: 250px;
+	float: left;
+}
+#c{
+	float: left;
+}
