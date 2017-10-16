@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+			background-color: #8DEEEE;
+			}
+			#a{
+				text-align: center;
+				color: brown;
+			}
+		</style>
+	</head>
+	<body>
+	<h1 id="a">I LOVE YOONA</h1>
+	  <script type="text/javascript">
+	  	var oh=document.getElementById("a");
+	  	var str=oh.innerText;
+	  	var i=0;
+	  	oh.innerHTML="";
+	  	function fun () {
+	  		if (i<str.length) {
+	  			oh.innerText+=str[i];	
+	  		}else{
+	  			i=-1;
+	  			oh.innerText="";
+	  		}
+	  		i++;
+	  	}
+	  	setInterval(fun,500);
+	  </script>
+	</body>
+</html>
