@@ -2,79 +2,138 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
-		<style>
-			.clock{
-				width: 200px;
-				height: 200px;
-				background: url(img/clock.jpg);
-				background-size: 100% 100%;
-				position: relative;
+		<title>mune</title>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			body{
+				margin: 0;
 			}
-			.hour{
-				width: 2px;
-				height: 40px;
-				background-color: #f00;
-				/*transform: rotate(20deg);*/
-				transform-origin: top center;
-				position: absolute;
-				left: 102px;
-				top: 62px;
-			}
-			.min{
-				width: 2px;
-				height: 50px;
-				background-color: #FF00FF;
-				/*transform: rotate(20deg);*/
-				transform-origin:top center;
-				position: absolute;
-				left: 100px;
-				top: 100px;
-			}
-			.second{
-				width: 2px;
+			#caidan{
+				
+				width: 100%;
 				height: 60px;
-				background-color:  	#FF6A6A;
-				/*transform: rotate(20deg);*/
-				transform-origin: top center;
-				position: absolute;
-				left: 100px;
-				top: 100px;
+				background-color: deepskyblue;
+			}
+			#tubiao{
+				font-size: 50px;
+				width: auto;
+				color: white;
+				margin: 5px 0  0 15px;
+				cursor: pointer;
+			}
+			#cebian{
+			
+				width: 300px;
+				height: 600px;
+				background-color: powderblue;
+				display: none;
+			}
+			h3{
+				color: rgba(0,0,0,.6);
+				margin: 0;
+				padding: 0;
+			}
+			#son {
+				list-style-type: none;
+				display: none;
+			}
+			#father{
+				padding: 0;
+				margin: -1px 0 0 15px;
+				list-style-type: none;	
+				cursor: pointer;	
+				display: block;
 			}
 		</style>
 	</head>
 	<body>
-		<!--<input type="text" name="text" id="text" value="" />
-		<button onclick="int=window.clearInterval(int)">stop</button>-->
-		<div class="clock">
-			<div class="hour"></div>
-		    <div class="min"></div>
-		    <div class="second"></div>
-		</div>
 		
+		<div id="caidan">
+			<div id="tubiao"><i class="fa fa-bars"></i>mune</div>
+		</div>
+		<div id="cebian">
+			<ul id="father">
+				<li>
+					<h3>mune1</h3>
+					<ul id="son">
+						<li>mune1</li>
+						<li>mune2</li>
+						<li>mune3</li>
+					</ul>
+				</li>
+				<li>
+					<h3>mune2</h3>
+					<ul id="son">
+						<li>mune1</li>
+						<li>mune2</li>
+						<li>mune3</li>
+					</ul>
+				</li>
+				<li>
+					<h3>mune3</h3>
+					<ul id="son">
+						<li>mune1</li>
+						<li>mune2</li>
+						<li>mune3</li>
+					</ul>
+				</li>
+				<li>
+					<h3>mune4</h3>
+					<ul id="son">
+						<li>mune1</li>
+						<li>mune2</li>
+						<li>mune3</li>
+					</ul>
+				</li>
+				<li>
+					<h3>mune5</h3>
+					<ul id="son">
+						<li>mune1</li>
+						<li>mune2</li>
+						<li>mune3</li>
+					</ul>
+				</li>
+				<li>
+					<h3>mune6</h3>
+					<ul id="son">
+						<li>mune1</li>
+						<li>mune2</li>
+						<li>mune3</li>
+					</ul>
+				</li>
+			</ul>
+			
+		</div>
 		<script type="text/javascript">
-			
-			//Date对象
-			//时钟，计时器
-			var now=new Date();
-			var hour,min,sec;
-			var oClock=document.querySelector('.clock');
-			var oHour=document.querySelector('.hour');
-			var oMin=document.querySelector('.min');
-			var oSecond=document.querySelector('.second');
-			function refresh() {
-				now=new Date();
-//				oClock.innerHTML=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();				
-				sec=now.getSeconds()*6;	
-				min=(now.getMinutes()+now.getSeconds()/60)*6;
-				hour=(now.getHours()+now.getMinutes()/60+now.getSeconds()/3600)*30;
-                 console.log(now.getMinutes());
-				oSecond.style.transform="rotate("+sec+"deg)";
-			    oMin.style.transform="rotate("+min+"deg)";
-			    oHour.style.transform="rotate("+hour+"deg)"
+			var otubiao=document.getElementById("tubiao");
+			var ocebian=document.getElementById("cebian");
+			var ofather=document.querySelectorAll("h3");
+			var oson=document.querySelectorAll("#son");
+			var oi=document.getElementsByClassName("fa");
+			otubiao.addEventListener("click",function  () {
+				
+				if(ocebian.style.display=="block"){
+					ocebian.style.display="none";
+					oi[0].style.transform="rotate(0deg)";
+				}
+				else{
+					ocebian.style.display="block";
+					oi[0].style.transform="rotate(90deg)";
+				}
+			});
+			for (i=0;i<ofather.length;i++) {
+				ofather[i].addEventListener("click",(function(n){
+					return function(){						
+						if(oson[n].style.display=="block"){
+							oson[n].style.display="none";							
+						}
+						else{
+							oson[n].style.display="block";							
+						}						
+					}											
+				})(i));
 			}
-			
-			setInterval(refresh,1000);
+
 		</script>
 	</body>
 </html>
