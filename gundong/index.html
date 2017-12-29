@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>新闻滚动效果</title>
+		<style type="text/css">
+			.a{
+				border: 1px dashed #000;
+				width: 600px;
+			}
+			.b{
+				overflow: hidden;
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				height: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<ul class="b">
+				<li>【数九寒天 他徒手破冰 救起落水老人[心]</li>
+				<li>26日，河北保定一位老人不慎掉入河中</li>
+				<li>路过的54岁大叔石磊发现后，</li>
+				<li>跪在冰面、徒手破冰，试图拽老人上岸</li>
+				<li>但并未成功，他便跳入冰冷的河水，将老人抱上</li>
+				<li>谢谢观看</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			/*
+			var oa=document.querySelector('.a');
+			var ob=document.querySelector('.b');
+			var oli=document.querySelectorAll('.b li');
+			ob.style.height='36px';
+			ob.innerHTML+=ob.innerHTML;
+			function run(){
+				if(ob.scrollTop>108){
+					ob.scrollTop=1;
+					setTimeout(run,100);
+				}
+				else{
+					ob.scrollTop++;
+					if(ob.scrollTop%36==0)
+					setTimeout(run,1000);
+					else
+						setTimeout(run,100);
+				}
+			}
+			run();
+			*/
+			var oa=document.querySelector('.a');
+			var ob=document.querySelector('.b');
+			var oli=document.querySelectorAll('.b li');
+			var runhight=oli[0].offsetHeight*2;
+			ob.style.height=runhight+'px';
+			ob.innerHTML+=ob.innerHTML;
+			function run(){
+				if(ob.scrollTop>runhight*3)
+				{ob.scrollTop=0}
+				else ob.scrollTop++;
+				if(ob.scrollTop%runhight==0)setTimeout(run,1000);
+				else setTimeout(run,100);
+			}
+			run();
+		</script>
+	</body>
+</html>
