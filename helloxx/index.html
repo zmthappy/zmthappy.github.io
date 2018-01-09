@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/csb.css" />
+		<style>
+			#test{
+				  border:2px solid blue;
+				 padding:15px; 
+				 background:#FF34B3; 
+				 width:80px; 
+				 position:absolute;
+				}
+		</style>
+	</head>
+
+	<body>
+		<p id="test" style="font-size:14px; color:#000;padding-top:5px;">内容</p>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<input type="button" value="变大" />
+		<br />
+
+		<script>
+				var aInput = document.getElementsByTagName('input');
+				var oTest = document.getElementById('test');
+				var zzz = 14;
+				aInput[0].addEventListener("click", function(event) {
+					setInterval("zmt()",100);
+					//		oFontSize++;
+					//		oTest.style.fontSize=oFontSize+'px';
+				});
+
+				function zmt() {
+					if(zzz<40){
+						zzz = zzz + 1;
+					}
+					oTest.style.fontSize = zzz +"px";
+				}
+		</script>
+	</body>
+
+</html>
